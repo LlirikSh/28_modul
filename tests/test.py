@@ -4,30 +4,8 @@ from pages.auth_page import AuthPage
 from tests.test_base import BaseTest
 
 
-class TestStartPage(BaseTest):
-   def test_start_page_product(self):
-      """Тест проверяет наличие на главной странице карточек с товаром и наличие у товара параметров: фото,
-      кнопки "Добаить в избранное" и "В корзину", название книги, цена"""
-      self.authPage = AuthPage(self.driver)
-      # 1) Проверяем что на странице присутствуют product-книги
-      START_PAGE_BOOKS = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS)
-      assert len(START_PAGE_BOOKS) > 0
-      # 2) Ищем и проверяем что на главной странице product-книги имеют фото, имя, цену, "избранное", "в корзину"
-      START_PAGE_BOOKS_IMG = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS_IMG)
-      START_PAGE_BOOKS_NAME = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS_NAME)
-      START_PAGE_BOOKS_PRICE = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS_PRICE)
-      START_PAGE_BOOKS_BTN_FAVOURITES = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS_FAVOURITES)
-      START_PAGE_BOOKS_BTN_CART = self.authPage.all_elements_are_presents(AuthLocators.AUTH_START_PAGE_BOOKS_BTN_CART)
-      for i in range(len(START_PAGE_BOOKS)):
-         assert START_PAGE_BOOKS_IMG[i].get_attribute(TestData.IMG_attribute) != ''
-         assert START_PAGE_BOOKS_NAME[i].text != '', "У книги № {} нет имени".format(i+1)
-         assert START_PAGE_BOOKS_PRICE[i].text != '', "У книги № {} нет цены".format(i+1)
-         assert START_PAGE_BOOKS_BTN_FAVOURITES[i].is_displayed(), "Книгу № {} нельзя добавить в избранное".format(i+1)
-         assert START_PAGE_BOOKS_BTN_CART[i].text == TestData.TEXT_BTN_CART or TestData.TEXT_BTN_CART_1, "Книгу № {} нельзя заказать".format(i+1)
-
-
    def test_go_to_page_putorder(self):
-      """Тест проверяет, что в шапке сайта кнопка "Отложено" переводит на страницу START_URL + 'cabinet/putorder/'"""
+      """Тест проверяет, что на главной странице сайта кнопка "Забыл пароль" переводит на страницу " востановления пароля""""
       self.authPage = AuthPage(self.driver)
       HEADER_BUTTON_PUTORDER = self.authPage.element_are_present(AuthLocators.AUTH_HEADER_BUTTON_PUTORDER)
       assert HEADER_BUTTON_PUTORDER.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
