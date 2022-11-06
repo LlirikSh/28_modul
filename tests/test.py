@@ -84,7 +84,36 @@ from tests.test_base import BaseTest
       YANDEX_URL = self.authPage.get_url()
       assert YANDEX_URL == TestData.YANDEX_URL
 
-
+   def test_go_to_registration_by_phone(self):
+      """Тест проверяет, что на главной странице сайта кнопка способ регистрации "Телефон" переводит на страницу 'регистрация с помощью номера телефона и пароля' """
+      self.authPage = AuthPage(self.driver)
+      START_PHONE = self.authPage.element_are_present(AuthLocators.AUTH_START_PHONE)
+      assert START_PHONE.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_PHONE)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      PHONE_URL = self.authPage.get_url()
+      assert PHONE_URL == TestData.PHONE_URL
+      
+    def test_go_to_registration_by_mail(self):
+      """Тест проверяет, что на главной странице сайта кнопка способ регистрации "Почта" переводит на страницу 'регистрация с помощью почтового адреса и пароля' """
+      self.authPage = AuthPage(self.driver)
+      START_MAIL = self.authPage.element_are_present(AuthLocators.AUTH_START_MAIL)
+      assert START_MAIL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_MAIL)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      MAIL_URL = self.authPage.get_url()
+      assert MAIL_URL == TestData.MAIL_URL     
+      
+    def test_go_to_registration_by_login(self):
+      """Тест проверяет, что на главной странице сайта кнопка способ регистрации "Логин" переводит на страницу 'регистрация с помощью логина и пароля' """
+      self.authPage = AuthPage(self.driver)
+      START_LOGIN = self.authPage.element_are_present(AuthLocators.AUTH_START_LOGIN)
+      assert START_LOGIN.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_LOGIN)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      LOGIN_URL = self.authPage.get_url()
+      assert LOGIN_URL == TestData.LOGIN_URL        
+      
 def test_go_to_page_cart(self):
       """Тест проверяет, что в шапке сайта кнопка "Корзина" переводит на страницу START_URL + '.../'"""
       self.authPage = AuthPage(self.driver)
