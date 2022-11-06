@@ -11,8 +11,8 @@ from tests.test_base import BaseTest
       assert START_FORGOT_PASSWORD.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
       self.authPage.hover_cursor_click(AuthLocators.AUTH_START_FORGOT_PASSWORD)
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
-       ZABIL_PASSWORD_URL = self.authPage.get_url()
-      assert  ZABIL_PASSWORD_URL == TestData.ZABIL_PASSWORD_URL
+      ZABIL_PASSWORD_URL = self.authPage.get_url()
+      assert ZABIL_PASSWORD_URL == TestData.ZABIL_PASSWORD_URL
  
    def test_go_to_page_putorder(self):
       """Тест проверяет, что на главной странице сайта кнопка "пользовательского соглашения" переводит на страницу 'пользовательского соглашения' """
@@ -21,18 +21,28 @@ from tests.test_base import BaseTest
       assert START_USER_AGREEMENT.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
       self.authPage.hover_cursor_click(AuthLocators.AUTH_START_USER_AGREEMENT)
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
-       USER_AGREEMENT_URL = self.authPage.get_url()
-      assert  USER_AGREEMENT_URL == TestData.USER_AGREEMENT_URL
+      USER_AGREEMENT_URL = self.authPage.get_url()
+      assert USER_AGREEMENT_URL == TestData.USER_AGREEMENT_URL
       
     def test_go_to_page_putorder(self):
       """Тест проверяет, что на главной странице сайта кнопка "Зарегистрироваться" переводит на страницу 'регистрации нового пользователя' """
       self.authPage = AuthPage(self.driver)
       START_FORGOT_PASSWORD = self.authPage.element_are_present(AuthLocators.AUTH_START_FORGOT_PASSWORD)
-      assert AUTH_START_FORGOT_PASSWORDUSER_AGREEMENT.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      assert START_FORGOT_PASSWORD.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
       self.authPage.hover_cursor_click(AuthLocators.AUTH_START_FORGOT_PASSWORD)
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
-       REGISTER_URL = self.authPage.get_url()
-      assert  REGISTER_URL == TestData.REGISTER_URL
+      REGISTER_URL = self.authPage.get_url()
+      assert REGISTER_URL == TestData.REGISTER_URL
+      
+   def test_go_to_page_putorder(self):
+      """Тест проверяет, что на главной странице сайта кнопка социальных сетей "ВК" переводит на страницу 'регистрация с помощью социальной сети VK' """
+      self.authPage = AuthPage(self.driver)
+      START_VK = self.authPage.element_are_present(AuthLocators.AUTH_START_VK)
+      assert START_VK.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_VK)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      VK_URL = self.authPage.get_url()
+      assert VK_URL == TestData.VK_URL
 
   
 
