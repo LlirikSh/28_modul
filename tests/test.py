@@ -124,20 +124,23 @@ from tests.test_base import BaseTest
       PERSONAL_ACCOUNT_URL  = self.authPage.get_url()
       assert PERSONAL_ACCOUNT_URL  == TestData.PERSONAL_ACCOUNT_URL         
 
-   def test_displayed_heder_call(self):
-      """Тест проверяет присутствие кнопки и икноки "Позвонить" на странице, видимость элемента на экране"""
+   def test_displayed_chat(self):
+      """Тест проверяет присутствие кнопки "Чат" на странице, видимость элемента на экране"""
       self.authPage = AuthPage(self.driver)
       assert self.authPage.element_are_present(
-         AuthLocators.AUTH_HEADER_BUTTON_CALL), "Элемент отсутствует на странице"
-      assert self.authPage.element_are_present(
-         AuthLocators.AUTH_HEADER_BUTTON_ICONS_CALL), "Иконка элемента отсутствует на странице"
-      HEADER_BUTTON_CALL = self.authPage.element_are_present(AuthLocators.AUTH_HEADER_BUTTON_CALL)
-      HEADER_BUTTON_ICONS_CALL = self.authPage.element_are_present(
-         AuthLocators.AUTH_HEADER_BUTTON_ICONS_CALL)
-      assert HEADER_BUTTON_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
-      assert HEADER_BUTTON_ICONS_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"      
+         AuthLocators.AUTH_START_CHAT), "Элемент отсутствует на странице"
+      START_CHAT = self.authPage.element_are_present(AuthLocators.AUTH_START_CHAT)
+      assert START_CHAT.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
 
-   def test_logo_translates_to_start_page(self):
+   def test_displayed_login(self):
+      """Тест проверяет присутствие кнопки "Войти" на странице, видимость элемента на экране"""
+      self.authPage = AuthPage(self.driver)
+      assert self.authPage.element_are_present(
+         AuthLocators. AUTH_START_LOGIN), "Элемент отсутствует на странице"
+      START_LOGIN = self.authPage.element_are_present(AuthLocators. AUTH_START_LOGIN)
+      assert START_LOGIN.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"  
+  
+   def test_logo_go_to_start(self):
       """Тест проверяет, что нажатие на логотип в шапке сайта приводит на стартовую страницу"""
       self.authPage = AuthPage(self.driver)
       # проверяем наличие логотипа на странице и видимость логотипа на экране
