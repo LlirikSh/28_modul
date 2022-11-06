@@ -95,10 +95,6 @@ class AuthPage(BasePage):
         """метод скроллит страницу до указанного элемента"""
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def accept_cookies_btn(self):
-        """метод находит всплывающее окно с предупреждением о cookies и нажимает кнопку Принять"""
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(AuthLocators.AUTH_ACCEPT_COOKIES_BTN)).click()
-
     def hover_cursor(self, locator):
         """Метод наводит курсор на элемент, найденный по локатору"""
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
@@ -122,19 +118,10 @@ class AuthPage(BasePage):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
         return element.text
 
-
     def get_url(self):
         """Метод возвращает полный URL страницы"""
         page_url = self.driver.current_url
         return page_url
-
-    def click_clear_send_text(self, locator, text):
-        """Метод кликает в поле, очищает его и вводит текст"""
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        action = ActionChains(self.driver)
-        action.move_to_element(element).click().pause(2)
-        element.clear()
-        element.send_keys(text)
 
     def click_clear_field(self, locator):
         """Метод кликает в поле и очищает его от текста"""
@@ -142,23 +129,6 @@ class AuthPage(BasePage):
         action = ActionChains(self.driver)
         action.move_to_element(element).click().pause(2)
         element.clear()
-
-    def clear_field(self, locator):
-        """Метод очищает поле от текста"""
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        element.clear()
-
-
-    def send_text(self, locator, text):
-        """Метод вводит текст"""
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        element.send_keys(text)
-
-    def send_text_1(self, locator, text):
-        """Метод вводит текст"""
-        element = self.driver.find_element(*locator)
-        return element.send_keys(text)
-
 
     def get_attribute_value(self, locator, attr_name):
         """Метод возвращает значение атрибута по названию атрибута и локатору"""
