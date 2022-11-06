@@ -121,6 +121,6 @@ from tests.test_base import BaseTest
       assert START_PERSONAL_ACCOUNT.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
       self.authPage.hover_cursor_click(AuthLocators.AUTH_START_PERSONAL_ACCOUNT)
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
-      LOGIN_URL = self.authPage.get_url()
-      assert LOGIN_URL == TestData.LOGIN_URL        
+      PERSONAL_ACCOUNT_URL  = self.authPage.get_url()
+      assert PERSONAL_ACCOUNT_URL  == TestData.PERSONAL_ACCOUNT_URL         
       
