@@ -15,7 +15,7 @@ class TestData:
     PHONE_URL = START_URL + '/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https://b2c.passport.rt.ru/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
     MAIL_URL =  START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
     LOGIN_URL = START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
-    PERSONAL_ACCOUNT = START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
+    PERSONAL_ACCOUNT_URL = START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
     
     # URL страницы забыл пароль
     ZABIL_PASSWORD_URL = START_URL + '/auth/realms/b2c/login-actions/reset-credentials?client_id=account_b2c&tab_id=ZwoVlt1xhgA'
