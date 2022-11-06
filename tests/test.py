@@ -7,12 +7,12 @@ from tests.test_base import BaseTest
    def test_go_to_page_putorder(self):
       """Тест проверяет, что на главной странице сайта кнопка "Забыл пароль" переводит на страницу " востановления пароля""""
       self.authPage = AuthPage(self.driver)
-      HEADER_BUTTON_PUTORDER = self.authPage.element_are_present(AuthLocators.AUTH_HEADER_BUTTON_PUTORDER)
-      assert HEADER_BUTTON_PUTORDER.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
-      self.authPage.hover_cursor_click(AuthLocators.AUTH_HEADER_BUTTON_PUTORDER)
+      START_FORGOT_PASSWORD = self.authPage.element_are_present(AuthLocators. AUTH_START_FORGOT_PASSWORD)
+      assert  START_FORGOT_PASSWORD.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators. AUTH_START_FORGOT_PASSWORD)
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
-      PUTORDER_URL = self.authPage.get_url()
-      assert PUTORDER_URL == TestData.PUTORDER_URL
+       ZABIL_PASSWORD_URL = self.authPage.get_url()
+      assert  ZABIL_PASSWORD_URL == TestData. ZABIL_PASSWORD_URL
 
 
    def test_go_to_page_cart(self):
