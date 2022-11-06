@@ -136,3 +136,15 @@ from tests.test_base import BaseTest
          AuthLocators.AUTH_HEADER_BUTTON_ICONS_CALL)
       assert HEADER_BUTTON_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
       assert HEADER_BUTTON_ICONS_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"      
+
+   def test_logo_translates_to_start_page(self):
+      """Тест проверяет, что нажатие на логотип в шапке сайта приводит на стартовую страницу"""
+      self.authPage = AuthPage(self.driver)
+      # проверяем наличие логотипа на странице и видимость логотипа на экране
+      assert self.authPage.element_are_present(AuthLocators.AUTH_LOGO)
+      LOGO = self.authPage.element_are_present(AuthLocators.AUTH_LOGO)
+      assert LOGO.is_displayed()
+      # нажимаем на логотип и проверяем, что оказались на главной странице
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_LOGO)
+      LOGO_URL = self.authPage.get_url()
+      assert LOGO_URL == TestData.START_URL      
