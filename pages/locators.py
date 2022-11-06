@@ -1,15 +1,15 @@
 class AuthLocators:
     # локатор логотипа "Лабиринт"
-    AUTH_LOGO = (By.CLASS_NAME, "b-header-b-logo-e-logo")
+    AUTH_LOGO = (By.CLASS_NAME, "rt-logo main-header__logo")
 
     # Локатор кнопки "Телефон" на стартовой на странице
-    AUTH_START_PHONE = 
+    AUTH_START_PHONE = (By.XPATH, '//span[text()="Телефон"]')
     # Локатор кнопки "Почта" на стартовой на странице
-    AUTH_START_MAIL = 
+    AUTH_START_MAIL = (By.XPATH, '//span[text()="Почта"]')
     # Локатор кнопки "Логин" на стартовой на странице
-    AUTH_START_LOGIN = 
+    AUTH_START_LOGIN = (By.XPATH, '//span[text()="Логин"]')
     # Локатор кнопки "Лицевой счет" на стартовой на странице
-    AUTH_START_PERSONAL_ACCOUNT = 
+    AUTH_START_PERSONAL_ACCOUNT = (By.XPATH, '//span[text()="Лицевой счёт"]')
     # Локатор кнопки "Забыл пароль" на стартовой на странице
     AUTH_START_FORGOT_PASSWORD = 
     # Локатор кнопки "Войти" на стартовой на странице
