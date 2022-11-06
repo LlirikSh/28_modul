@@ -64,7 +64,25 @@ from tests.test_base import BaseTest
       MAIL_URL = self.authPage.get_url()
       assert MAIL_URL == TestData.MAIL_URL
 
+   def test_go_to_my_google(self):
+      """Тест проверяет, что на главной странице сайта кнопка социальных сетей "Google" переводит на страницу 'регистрация с помощью социальной сети google.com' """
+      self.authPage = AuthPage(self.driver)
+      START_GOOGLE = self.authPage.element_are_present(AuthLocators.AUTH_START_GOOGLE)
+      assert START_GOOGLE.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_GOOGLE)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      GOOGLE_URL = self.authPage.get_url()
+      assert GOOGLE_URL == TestData.GOOGLE_URL
   
+   def test_go_to_my_yandex(self):
+      """Тест проверяет, что на главной странице сайта кнопка социальных сетей "Yandex" переводит на страницу 'регистрация с помощью социальной сети yandex.ru' """
+      self.authPage = AuthPage(self.driver)
+      START_YANDEX = self.authPage.element_are_present(AuthLocators.AUTH_START_YANDEX)
+      assert START_YANDEX.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      self.authPage.hover_cursor_click(AuthLocators.AUTH_START_YANDEX)
+      # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
+      YANDEX_URL = self.authPage.get_url()
+      assert YANDEX_URL == TestData.YANDEX_URL
 
 
 def test_go_to_page_cart(self):
