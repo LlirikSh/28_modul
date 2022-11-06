@@ -11,6 +11,12 @@ class TestData:
     GOOGLE_URL = 'https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?scope=openid&state=phSPXqhSch6GGbioFyEGz9d0hHLYRMxF8zPmzpYMdD4.ZwoVlt1xhgA.account_b2c&response_type=code&client_id=121868035218-rd8lrg4eb24p25g6vo6qnoerkln4b2lp.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fb2c.passport.rt.ru%2Fsocial%2Fadapter%2Fgoogle%2Fauth&nonce=jtn_gcuyT9l122qnfnRQ3Q&service=lso&flowName=GeneralOAuthFlow'
     YANDEX_URL = 'https://oauth.yandex.ru/authorize?scope=login%3Aemail&state=pqV8OG-OjoeHVDYmTIilWE3X6wkVgFuHcsmbEMjGjDI.ZwoVlt1xhgA.account_b2c&response_type=code&client_id=cca955e781554be08e4007813ddd578e&redirect_uri=https://b2c.passport.rt.ru/social/adapter/ya/auth&nonce=_n7T8xIRDBZnIzmt6H1ODg'
 
+    # URL страниц способов авторизации
+    PHONE_URL = START_URL + '/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https://b2c.passport.rt.ru/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
+    MAIL_URL =  START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
+    LOGIN_URL = START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
+    PERSONAL_ACCOUNT = START_URL + '/account_b2c/login&response_type=code&scope=openid&state=62e196c7-c423-4efb-9577-154ec7f790db&theme&auth_type'
+    
     # URL страницы забыл пароль
     ZABIL_PASSWORD_URL = START_URL + '/auth/realms/b2c/login-actions/reset-credentials?client_id=account_b2c&tab_id=ZwoVlt1xhgA'
     
