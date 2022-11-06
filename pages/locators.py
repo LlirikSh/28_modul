@@ -10,7 +10,7 @@ class AuthLocators:
     AUTH_START_LOGIN = (By.XPATH, '//span[text()="Логин"]')
     # Локатор кнопки "Лицевой счет" на стартовой на странице
     AUTH_START_PERSONAL_ACCOUNT = (By.XPATH, '//span[text()="Лицевой счёт"]')
-       # Локатор кнопки социальных сетей "ВК" на стартовой на странице
+    # Локатор кнопки социальных сетей "ВК" на стартовой на странице
     AUTH_START_VK = (By.XPATH, '//div[@class="social-providers"]/a[@alt="ВКонтакте"]')
      # Локатор кнопки социальных сетей "Однокласники" на стартовой на странице
     AUTH_START_OK = (By.XPATH, '//div[@class="social-providers"]/a[@alt="Одноклассники.ru"]')
