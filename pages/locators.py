@@ -23,23 +23,11 @@ class AuthLocators:
     # Локатор кнопки "Регистрация" на стартовой на странице
     AUTH_START_REGISTER = (By.XPATH, '//div[@class="login-form__register-con"]/a[text()=" Зарегистрироваться "]')
     # Локатор кнопки "Чат" на стартовой на странице
-    AUTH_START_CHAT = 
+    AUTH_START_CHAT = (By.CLASS_NAME, "omnichat-bar-root svelte-16eyo30")
      # Локатор кнопки "Забыл пароль" на стартовой на странице
     AUTH_START_FORGOT_PASSWORD =  (By.CLASS_NAME, "b-header-b-personal-e-list-item")
     # Локатор кнопки "Войти" на стартовой на странице
     AUTH_START_LOGIN = (By.CLASS_NAME, "rt-link rt-link--orange rt-link--muted login-form__forgot-pwd login-form__forgot-pwd--muted")
     # Локатор кнопки "Пользовательское соглашение" на стартовой на странице
     AUTH_START_USER_AGREEMENT = (By.XPATH, '//div[@class="auth-policy"]/a[text()="пользовательского соглашения"]')
-  
-  (By.XPATH, '//div[@class="pagination-next"]/a[text()="Следующая"]')
-  
-  (By.CLASS_NAME, "b-header-b-personal-e-list-item")
     
-   (By.XPATH, '//div[@class="pagination-next"]/a[text()="Следующая"]')
-  
-  
-  
-  
-  
-  
- 
