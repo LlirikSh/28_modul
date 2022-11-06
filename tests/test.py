@@ -123,4 +123,16 @@ from tests.test_base import BaseTest
       # открывается страница "Отложенные", получаем URL новой страницы и сравниваем с данными из config.py
       PERSONAL_ACCOUNT_URL  = self.authPage.get_url()
       assert PERSONAL_ACCOUNT_URL  == TestData.PERSONAL_ACCOUNT_URL         
-      
+
+   def test_displayed_heder_call(self):
+      """Тест проверяет присутствие кнопки и икноки "Позвонить" на странице, видимость элемента на экране"""
+      self.authPage = AuthPage(self.driver)
+      assert self.authPage.element_are_present(
+         AuthLocators.AUTH_HEADER_BUTTON_CALL), "Элемент отсутствует на странице"
+      assert self.authPage.element_are_present(
+         AuthLocators.AUTH_HEADER_BUTTON_ICONS_CALL), "Иконка элемента отсутствует на странице"
+      HEADER_BUTTON_CALL = self.authPage.element_are_present(AuthLocators.AUTH_HEADER_BUTTON_CALL)
+      HEADER_BUTTON_ICONS_CALL = self.authPage.element_are_present(
+         AuthLocators.AUTH_HEADER_BUTTON_ICONS_CALL)
+      assert HEADER_BUTTON_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"
+      assert HEADER_BUTTON_ICONS_CALL.is_displayed(), "Элемент не виден на дисплее при ширине окна более 1020"      
